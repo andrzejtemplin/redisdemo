@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.7.5'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'com.example.redis'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-actuator:3.0.0'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'io.lettuce:lettuce-core:6.2.1.RELEASE'
+    implementation 'org.springframework.cloud:spring-cloud-starter-vault-config:3.1.1'
+    implementation 'org.projectlombok:lombok:1.18.24'
+    implementation 'com.github.fppt:jedis-mock:1.0.5'
+    implementation 'org.springframework.boot:spring-boot-autoconfigure:2.7.5'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'io.projectreactor:reactor-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
